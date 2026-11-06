@@ -7,6 +7,14 @@ export function TarjetaProducto(producto, enCarrito) {
   const tarjeta = crearElemento("article", { clase: "producto", datos: { id: producto.id } });
   tarjeta.classList.toggle("en-carrito", enCarrito);
   tarjeta.append(
+    crearElemento("img", { 
+      clase:"producto-img",
+      atributos: { 
+        src: producto.imagen, 
+        alt: producto.nombre, 
+        referrerpolicy: "no-referrer" 
+      } 
+    }),
     crearElemento("span", { clase: "categoria", texto: producto.categoria }),
     crearElemento("span", { clase: "nombre", texto: producto.nombre }),
     crearElemento("span", { clase: "precio", texto: formatoDinero(producto.precio) }),
